@@ -169,30 +169,6 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = e.target.querySelector('input[type="email"]').value;
-            
-            try {
-                const response = await fetch('https://formspree.io/f/mdkokpwk', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email }),
-                });
-                
-                if (response.ok) {
-                    alert('Thank you for joining our waitlist!');
-                    e.target.reset();
-                } else {
-                    throw new Error('Failed to submit');
-                }
-            } catch (error) {
-                alert('Sorry, there was an error. Please try again later.');
-            }
-        });
-    </script>
+
 </body>
 </html>
